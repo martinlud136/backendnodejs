@@ -1,0 +1,8 @@
+Recomendaciones
+
+1 evaluar los cors (quienes tienen accesos para las solicitudes)
+2 este sobre un servidor https (evitar que se conozcan las peticiones)
+3 procesos de build, typescript compila, sass, todo que corra antes de produccion
+4 remover los logs, (usar sentry para logs en produccion)
+5 seguridad(Helmet) coleccion de middlewares para seguridad en node
+6 testing (pruebas unitarias)

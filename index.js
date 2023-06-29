@@ -9,17 +9,18 @@ const port = 3000;
 
 app.use(express.json())
 
-const whitelist = ["http://localhots:8080", "https://myapp.com"]
-const options = {
-  origin : (origin, callback)=>{
-    if(whitelist.includes(origin)){
-      callback(null, true)
-    }else{
-      callback(new Error("no se puede pasar"))
-    }
-  }
-}
-app.use(cors(options))
+// const whitelist = ["http://localhots:8080", "https://myapp.com", "http://localhots:3000"]
+// const options = {
+//   origin : (origin, callback)=>{
+//     console.log({origin})
+//     if(whitelist.includes(origin)){
+//       callback(null, true)
+//     }else{
+//       callback(new Error("no se puede pasar"))
+//     }
+//   }
+// }
+app.use(cors())
 
 app.get("/", (req, res)=>{
   res.send('Hola mi server en express')

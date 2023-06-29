@@ -5,7 +5,8 @@ const routerApi = require('./routes');
 const {logErrors, errorHandler, boomErrorHandler} = require("./middlewares/error.handler")
 
 const app = express()
-const port = 3000;
+//requerimiento de vercel leer el puerto desde una variable de ambiente
+const port = process.env.PORT || 3000;
 
 app.use(express.json())
 
@@ -22,11 +23,12 @@ app.use(express.json())
 // }
 app.use(cors())
 
-app.get("/", (req, res)=>{
+//requerimiento de vercel es que la ruta sea /api
+app.get("/api", (req, res)=>{
   res.send('Hola mi server en express')
 })
 
-app.get("/nueva-ruta", (req, res)=>{
+app.get("/api/nueva-ruta", (req, res)=>{
   res.send('Hola soy una nueva ruta')
 })
 
